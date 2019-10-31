@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+   backend:
+      image: tuanpt9898/backend-example 
+      restart: always
+      ports:
+        - "8000:8000"
+      environment:
+        FRONT_URL: http://127.27.100.198:5000
+   frontend:
+      depends_on:
+        - backend
+      image: tuanpt9898/frontend-example
+      restart: always
+      ports:
+        - "5000:5000"
+      environment:
+        API_URL: http://127.27.100.198:8000
+      
