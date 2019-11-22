@@ -10,10 +10,12 @@ RUN apt install -y nodejs
 RUN mkdir /home/frontend-dev
 
 
-# Copy source code 
+# Copy source code
 COPY ./ /home/frontend-dev
-WORKDIR /home/frontend-dev/ 
-CMD API_URL  npm start
+WORKDIR /home/frontend-dev/
+RUN npm install
+CMD API_URL=${URL}  npm start
 
 
-EXPOSE 5000 
+
+EXPOSE 5000
