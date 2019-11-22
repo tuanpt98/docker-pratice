@@ -14,10 +14,10 @@ Command run Back end project
 
 [1.12 - Run web-app]()
 
-- Run frontend:
+- Run [frontend](./frontend/1.12.Dockerfile):
   - Build images : `docker build -f 1.12.Dockerfile -t frontend:1.0 .`
   - Run container: `docker run -d --env URL="http://ip-host:8000"  -p 5000:5000 --name frontend-app frontend:1.0` 
-- Run backend:
+- Run [backend](./backend/1.12.Dockerfile):
   - Build images: ` docker build -f 1.12.Dockerfile -t backend:1.0 . `
   - Run container: ` docker run -d --env URL="http://ip-host:5000 -p 8000:8000 --name backend-app backend:1.0`
 
