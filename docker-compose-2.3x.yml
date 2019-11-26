@@ -2,19 +2,19 @@ version: '2'
 
 services:
    backend:
-      image: tuanpt9898/backend-example 
+      image: tuanpt9898/backend-app:1.0
       restart: always
       ports:
         - "8000:8000"
       environment:
-        FRONT_URL: backend:5000
+        FRONT_URL: http://${URL}:5000
    frontend:
       depends_on:
         - backend
-      image: tuanpt9898/frontend-example
+      image: tuanpt9898/frontend-app:1.0
       restart: always
       ports:
         - "5000:5000"
       environment:
-        API_URL: front:8000
+        API_URL: http://${URL}:8000
       
