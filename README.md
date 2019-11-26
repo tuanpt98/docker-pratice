@@ -34,7 +34,7 @@ Command run Back end project
   - Login docker hub : ` docker login --username=<username>` 
 
 
-  - Write environment `URL=<ip-host>`  to file `.env`:
+  - Write environment `IP_HOST=<ip-host>`  to file `.env`:
      
   - Build images: 
     - Frontend: ` docker build -f 1.12.Dockerfile -t <username>/frontend:1.0 .`

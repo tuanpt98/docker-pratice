@@ -4,7 +4,7 @@ USER root
 
 # Update repo and install nodejs
 RUN apt update -y
-RUN apt install curl xsel -y
+RUN apt install curl  -y
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt install -y nodejs
 # Add user 
@@ -18,7 +18,6 @@ RUN npm install cross-env
 
 # Run service 
 USER backend-dev
-CMD FRONT_URL npm start
-
+CMD FRONT_URL=${URL}  npm start
 
 EXPOSE 8000 
