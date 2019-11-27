@@ -7,11 +7,10 @@ RUN apt update -y
 RUN apt install curl -y
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt install -y nodejs
-RUN mkdir /home/backend-dev
 
 # Copy source code
-COPY ./ /home/backend-dev
 WORKDIR /home/backend-dev/
+COPY ./ /home/backend-dev
 RUN npm install cross-env
 CMD   npm start
 

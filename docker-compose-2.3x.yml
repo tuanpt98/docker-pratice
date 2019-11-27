@@ -7,7 +7,7 @@ services:
       ports:
         - "8000:8000"
       environment:
-        FRONT_URL: http://${URL}:5000
+        FRONT_URL: http://${IP_HOST}:5000
    frontend:
       depends_on:
         - backend
@@ -16,5 +16,5 @@ services:
       ports:
         - "5000:5000"
       environment:
-        API_URL: http://${URL}:8000
+        API_URL: http://${IP_HOST}:8000
       
