@@ -12,9 +12,9 @@ RUN useradd backend-dev
 
 
 # Copy source code 
-WORKDIR /home/backend-dev/backend-example-docker/
-COPY --chown=backend-dev ./  /home/backend-dev/
-RUN npm install cross-env
+WORKDIR /home/backend-dev/
+COPY --chown=backend-dev . .
+RUN npm install 
 
 # Run service 
 USER backend-dev

@@ -8,13 +8,15 @@ RUN apt install curl -y
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt install -y nodejs
 
+# Useradd
+# Add user
+RUN useradd frontend-dev
 
 # Copy source code 
-
 WORKDIR /home/frontend-dev/
-COPY --chown=frontend-dev ./ /home/frontend-dev/
-RUN npm install cross-env
-USER backend-dev
+COPY --chown=frontend-dev . .
+RUN npm install 
+USER frontend-dev
 CMD API_URL=${URL}  npm start
 
 
